@@ -46,11 +46,6 @@ class Keyboard:
             self.wheel_vel_forward = 150
             self.wheel_vel_rotation = 30
 
-
-
-
-
-
         elif key == Key.space:
             self.directions[:] = [False, False, False, False]
 
