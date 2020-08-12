@@ -68,12 +68,12 @@ class Keyboard:
             right_speed = -self.wheel_vel_forward
 
         if self.directions[2]:
-            left_speed  += 0
+            left_speed  -= self.wheel_vel_rotation
             right_speed += self.wheel_vel_rotation
 
         if self.directions[3]:
             left_speed  += self.wheel_vel_rotation
-            right_speed += 0
+            right_speed -= self.wheel_vel_rotation
 
         return left_speed, right_speed
         
@@ -104,7 +104,10 @@ if __name__ == "__main__":
         font = cv2.FONT_HERSHEY_SIMPLEX
         location = (0, 0)
         font_scale = 1
-        font_col = (255, 255, 255)
+        font_col_1 = (255, 255, 255)
+        font_col_2 = (0, 0, 255)
+        font_col_3 = (0, 255, 0)
+
         line_type = 2
 
         # get velocity of each wheel
@@ -120,7 +123,11 @@ if __name__ == "__main__":
         resized = cv2.resize(curr, (960, 720), interpolation = cv2.INTER_AREA)
 
         # feel free to add more GUI texts
-        cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col, line_type)
+        cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col_1, line_type)
+        cv2.putText(resized, 'Wheel Velocity : ', (15, 595), font, font_scale, font_col_3, line_type)
+        cv2.putText(resized, 'Left_W: ' + str(L_Wvel), (15, 630), font, 0.75, font_col_3, line_type)
+        cv2.putText(resized, 'Right_W: ' + str(R_Wvel), (15, 660), font, 0.75, font_col_3, line_type)
+        cv2.putText(resized, 'BOOST: ', (15, 700), font, 1, font_col_2, line_type)
 
         cv2.imshow('video', resized)
         cv2.waitKey(1)
