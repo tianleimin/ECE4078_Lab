@@ -42,6 +42,13 @@ class Keyboard:
             self.directions[3] = True
             self.directions[2] = False
 
+        elif str(key) == "'p'":
+
+
+
+
+
+
         elif key == Key.space:
             self.directions[:] = [False, False, False, False]
 
