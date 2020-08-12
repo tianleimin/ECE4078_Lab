@@ -43,8 +43,12 @@ class Keyboard:
             self.directions[2] = False
 
         elif str(key) == "'b'":
-            self.wheel_vel_forward = 150
-            self.wheel_vel_rotation = 30
+            if (self.wheel_vel_forward == 100):
+                self.wheel_vel_forward = 150
+                self.wheel_vel_rotation = 30
+            else:
+                self.wheel_vel_forward = 100
+                self.wheel_vel_rotation = 20
 
         elif key == Key.space:
             self.directions[:] = [False, False, False, False]
