@@ -42,7 +42,9 @@ class Keyboard:
             self.directions[3] = True
             self.directions[2] = False
 
-        elif str(key) == "'p'":
+        elif str(key) == "'b'":
+            self.wheel_vel_forward = 150
+            self.wheel_vel_rotation = 30
 
 
 
