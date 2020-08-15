@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 class Keyboard:
-    
+
     
 
     def __init__(self, ppi=None):
@@ -130,7 +130,19 @@ if __name__ == "__main__":
 
         # feel free to add more GUI texts
         cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col_1, line_type)
-        cv2.putText(resized, 'Wheel Velocity : ', (15, 595), font, font_scale, font_col_3, line_type)
+        direction = ''
+        if (L_Wvel == R_Wvel) & ((L_Wvel + R_Wvel) > 0):
+            direction = 'Forward'
+        elif (L_Wvel == R_Wvel) & ((L_Wvel + R_Wvel) < 0):
+            direction = 'Backward'
+        elif L_Wvel < R_Wvel:
+            direction = 'Turn Left'
+        elif L_Wvel > R_Wvel:
+            direction = 'Turn Right'
+        elif L_Wvel == R_Wvel == 0:
+            direction = 'Stop'
+        cv2.putText(resized, 'Direction : ' + direction, (15, 550), font, font_scale, font_col_3, line_type)
+        cv2.putText(resized, 'Wheel Velocity : ' + str((L_Wvel + R_Wvel)/2), (15, 595), font, font_scale, font_col_3, line_type)
         cv2.putText(resized, 'Left_W: ' + str(L_Wvel), (15, 630), font, 0.75, font_col_3, line_type)
         cv2.putText(resized, 'Right_W: ' + str(R_Wvel), (15, 660), font, 0.75, font_col_3, line_type)
         cv2.putText(resized, 'BOOST: ', (15, 700), font, 1, font_col_2, line_type)
