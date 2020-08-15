@@ -85,7 +85,6 @@ class Keyboard:
             lv, rv = self.ppi.set_velocity(lv, rv)
             self.wheel_vels = [lv, rv]
             print(self.wheel_vels)
-            print(self.directions)
             
     def latest_drive_signal(self):
         return self.wheel_vels
@@ -123,12 +122,17 @@ if __name__ == "__main__":
         # feel free to change the resolution
         resized = cv2.resize(curr, (960, 720), interpolation = cv2.INTER_AREA)
 
+        if L_Wvel > 100 or R_Wvel > 100:
+            BOOST_FLAG = "Send mode"
+        else:
+            BOOST_FLAG = "OFF"
+
         # feel free to add more GUI texts
         cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col_1, line_type)
         cv2.putText(resized, 'Wheel Velocity : ', (15, 595), font, font_scale, font_col_3, line_type)
         cv2.putText(resized, 'Left_W: ' + str(L_Wvel), (15, 630), font, 0.75, font_col_3, line_type)
         cv2.putText(resized, 'Right_W: ' + str(R_Wvel), (15, 660), font, 0.75, font_col_3, line_type)
-        cv2.putText(resized, 'BOOST: ', (15, 700), font, 1, font_col_2, line_type)
+        cv2.putText(resized, 'BOOST: ' + str(BOOST_FLAG), (15, 700), font, 1, font_col_2, line_type)
 
         cv2.imshow('video', resized)
         cv2.waitKey(1)
