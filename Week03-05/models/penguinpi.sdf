@@ -1,0 +1,562 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+  <model name="PenguinPi">
+    <pose>0 0 0.017 0 0 0</pose>
+
+    <link name='base_link'>
+      <pose>0 0 0.015 0 0 0</pose>
+      <inertial>
+      <pose>0 0 -0.0 0 0 0</pose>
+        <mass>10.51011</mass>
+        <inertia>
+          <ixx>1.200055</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.20055</iyy>
+          <iyz>0</iyz>
+          <izz>01.2</izz>
+        </inertia>
+      </inertial>
+    
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>.150 .120 .03</size>
+              </box>
+            </geometry>
+
+            <surface>
+              <friction>
+                <ode>
+                  <mu>0</mu>
+                  <mu2>0</mu2>
+                  <slip1>1.0</slip1>
+                  <slip2>1.0</slip2>
+                </ode>
+              </friction>
+            </surface>
+
+             <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+          </collision>
+
+          <!-- <visual name='visual'>
+            <geometry>
+              <box>
+                <size>.150 .120 .03</size>
+              </box>
+            </geometry>
+          </visual> -->
+
+         <collision name='caster_collision'>
+            <pose>-0.069 0 -0.015 0 0 0</pose>
+            <geometry>
+                <sphere>
+                <radius>.009</radius>
+              </sphere>
+            </geometry>
+
+            <surface>
+              <friction>
+                <ode>
+                  <mu>0</mu>
+                  <mu2>0</mu2>
+                  <slip1>1.0</slip1>
+                  <slip2>1.0</slip2>
+                </ode>
+              </friction>
+            </surface>
+
+             <bounce>
+              <restitution_coefficient>0</restitution_coefficient>
+              <threshold>1e+06</threshold>
+            </bounce>
+          </collision>
+
+          <!-- <visual name='caster_visual'>
+            <pose>-0.069 0 -0.015  0 0 0</pose>
+            <material>
+              <ambient>1 0.2 0 1</ambient>
+              <diffuse>0.1 0 0 1</diffuse>
+              <specular>0 0 0 1</specular>
+            </material>
+            <geometry>
+              <sphere>
+                <radius>.009</radius>
+              </sphere>
+            </geometry>
+            <transparency>0</transparency>
+            <cast_shadows>1</cast_shadows>
+          </visual> -->
+    </link>
+
+
+    <link name='mesh_links'>
+     <pose>0.11 -0.086 -0.160 0 0 1.5708</pose>
+      <inertial>
+        <pose frame=''>-0.00 0 0.000673 0 -0 0</pose>
+        <mass>0.45</mass>
+        <inertia>
+          <ixx>0</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0</iyy>
+          <iyz>0</iyz>
+          <izz>0</izz>
+        </inertia>
+      </inertial>
+        <visual name='chassis_visual'>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 128</specular>
+            <emmisive>1 1 1</emmisive>
+          </material>
+          <geometry>
+            <mesh>              
+              <uri>model://penguinpi_description/meshes/Chassiss.stl</uri>
+            </mesh>
+          </geometry>
+          <transparency>0.2</transparency>
+          <cast_shadows>1</cast_shadows>
+        </visual>
+
+        <visual name='standoff_visual'>
+          <material>
+            <ambient>0.1 0.1 0.1</ambient>
+            <diffuse>0.1 0.1 0.1</diffuse>
+            <specular>0.01 0.01 0.01 1.0 1.0</specular>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://penguinpi_description/meshes/Castor.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+
+        <visual name='motors_visual'>
+          <material>
+            <ambient>1 1 0</ambient>
+            <diffuse>1 1 0</diffuse>
+            <specular>0 0 0 0 0</specular>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://penguinpi_description/meshes/Motors.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+
+        <visual name='electronics_visual'>
+          <material>
+            <ambient>0 0.6 0</ambient>
+            <diffuse>0 0.6 0</diffuse>
+            <specular>0.1 0.1 0.1 1 1</specular>
+          </material>
+          <geometry>
+            <mesh>
+              <uri>model://penguinpi_description/meshes/Electronics_s.stl</uri>
+            </mesh>
+          </geometry>
+        </visual>
+
+      <visual name='lwheel_tire_visual'>
+        <material>
+          <ambient>0.1 0.1 0.1</ambient>
+          <diffuse>0.1 0.1 0.1</diffuse>
+          <specular>0.01 0.01 0.01 1.0 1.0</specular>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://penguinpi_description/meshes/Tire_s.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name='lwheel_rim_visual'>
+        <material>
+          <ambient>1 1 0</ambient>
+          <diffuse>1 1 0</diffuse>
+          <specular>0 0 0 0 0</specular>
+        </material>
+        <geometry>
+          <mesh>
+            <uri>model://penguinpi_description/meshes/Rim_s.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name='rwheel_tire_visual'>
+              <material>
+          <ambient>0.1 0.1 0.1</ambient>
+          <diffuse>0.1 0.1 0.1</diffuse>
+          <specular>0.01 0.01 0.01 1.0 1.0</specular>
+        </material>
+        <pose>0.1710 0.136 0  0 0 3.1416</pose>
+        <geometry>
+          <mesh>
+            <uri>model://penguinpi_description/meshes/Tire_s.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <visual name='rwheel_rim_visual'>
+        <material>
+          <ambient>1 1 0</ambient>
+          <diffuse>1 1 0</diffuse>
+          <specular>0 0 0 0 0</specular>
+        </material>
+        <pose>0.1710 0.136 0  0 0 3.1416</pose>
+        <geometry>
+          <mesh>
+            <uri>model://penguinpi_description/meshes/Rim_s.stl</uri>
+          </mesh>
+        </geometry>
+      </visual> 
+    </link>
+    
+
+
+    <link name="left_wheel">
+      <pose>0.041 0.075 0.015 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>0.00248235</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00304363</iyy>
+          <iyz>0</iyz>
+          <izz>0.0023528</izz>
+        </inertia>
+      </inertial>
+      
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.032</radius>
+            <length>.022</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>50</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0.06</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+08</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+08</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.032</radius>
+            <length>.022</length>
+          </cylinder>
+        </geometry>
+        <transparency>0.9</transparency>
+      </visual>
+    </link>
+
+    <link name="right_wheel">
+      <pose>0.041 -0.075 0.015 0 1.5707 1.5707</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>0.00248235</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00304363</iyy>
+          <iyz>0</iyz>
+          <izz>0.0023528</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>.032</radius>
+            <length>.022</length>
+          </cylinder>
+        </geometry>
+          <surface>
+          <friction>
+            <ode>
+              <mu>0.9</mu>
+              <mu2>50</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+            <torsional>
+              <coefficient>1</coefficient>
+              <patch_radius>0.06</patch_radius>
+              <surface_radius>0</surface_radius>
+              <use_patch_radius>1</use_patch_radius>
+              <ode>
+                <slip>0</slip>
+              </ode>
+            </torsional>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0</restitution_coefficient>
+            <threshold>1e+06</threshold>
+          </bounce>
+          <contact>
+            <collide_without_contact>0</collide_without_contact>
+            <collide_without_contact_bitmask>1</collide_without_contact_bitmask>
+            <collide_bitmask>1</collide_bitmask>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+08</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+            <bullet>
+              <split_impulse>1</split_impulse>
+              <split_impulse_penetration_threshold>-0.01</split_impulse_penetration_threshold>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+08</kp>
+              <kd>1</kd>
+            </bullet>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>.032</radius>
+            <length>.022</length>
+          </cylinder>
+        </geometry>
+        <transparency>0.9</transparency>
+      </visual>
+    </link> 
+
+  <link name='cam_link'>
+    <pose>0.08 0.0 0.015 0 0 0</pose>
+    <inertial>
+      <mass>0.1</mass>
+      <inertia>
+        <ixx>1</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1</iyy>
+        <iyz>0</iyz>
+        <izz>1</izz>
+      </inertia>
+    </inertial>
+    <self_collide>0</self_collide>
+    <kinematic>0</kinematic>
+    <sensor name='camera1' type='camera'>
+      <camera name="head">
+        <horizontal_fov>1.0855</horizontal_fov> <!-- from raspberry pi specs-->
+        <vertical_fov>0.8517</vertical_fov> <!-- from raspberry pi specs-->
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <visualize>1</visualize>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>picam/camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </link>
+
+    <joint name ='cam_fix' type='fixed'>
+      <parent>cam_link</parent>
+      <child>base_link</child>
+    </joint>
+
+    <joint name ='fix' type='fixed'>
+      <parent>mesh_links</parent>
+      <child>base_link</child>
+    </joint>
+
+    <joint type="revolute" name="left_wheel_hinge">
+      <pose>0 0 -0.03 0 0 0</pose>
+      <child>left_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+     
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <joint type="revolute" name="right_wheel_hinge">
+      <pose>0 0 0.03 0 0 0</pose>
+      <child>right_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+
+    <!-- camera -->
+
+  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>20</updateRate>
+
+    <!-- Name of left joint, defaults to `left_joint` -->
+    <leftJoint>left_wheel_hinge</leftJoint>
+
+    <!-- Name of right joint, defaults to `right_joint` -->
+    <rightJoint>right_wheel_hinge</rightJoint>
+
+    <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+    <wheelSeparation>0.150</wheelSeparation>
+
+    <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+    <wheelDiameter>0.075</wheelDiameter>
+
+    <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+    <wheelAcceleration>1</wheelAcceleration>
+
+    <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+    <wheelTorque>5</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame, defaults to `odom` -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+    <robotBaseFrame>base_link</robotBaseFrame>
+
+    <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
+    <odometrySource>0</odometrySource>
+
+    <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the odometry, defaults to true -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel joints, defaults to false -->
+    <publishWheelJointState>true</publishWheelJointState>
+
+    <!-- Set to true to swap right and left wheels, defaults to true -->
+    <legacyMode>false</legacyMode>
+  </plugin>
+
+  </model>
+</sdf>

@@ -2,7 +2,9 @@
 For lab sessions of unit ECE4078 (Intelligent Robotics)
 
 ## Instructions
-Please see each folder for every week's detailed instrcutions and getting-started codes
+Please see each folder for every week's detailed instrcutions and getting-started codes.
+
+For discussion please join the [Slack channel](https://intelligentrobots2020.slack.com/archives/C0186M64UAY).
 
 ## Format
 Due to restricted access to the campus, you will be doing the implementation and testing mainly inside a simulator environment during the early weeks. 
