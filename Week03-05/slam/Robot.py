@@ -22,10 +22,21 @@ class Robot:
 
         # Apply the velocities
         dt = drive_meas.dt
-        # TODO: compute state (x,y,theta) from linear and angular velocity
-        # ------------------------------------------
-        # ----------- Add your code here -----------
-        # ------------------------------------------
+        
+        if angular_velocity == 0:
+            x = self.state[0] + linear_velocity * dt
+            t = self.state[1] + linear_velocity * dt
+            theta = self.state[2]
+        
+        else:
+            theta = self.state[2] + angular_velocity * dt
+
+            R = linear_velocity/angular_velocity
+
+            x = self.state[0] + R * (-np.sin(self.state[2]) + np.sin(theta))
+            y = self.state[1] + R * ( np.cos(self.state[2]) - np.cos(theta))
+
+        self.state = [x, y, theta]
 
     def measure(self, markers, idx_list):
         # Markers are 2d landmarks in a 2xn structure where there are n landmarks.
