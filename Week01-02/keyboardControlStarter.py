@@ -40,12 +40,6 @@ class Keyboard:
             self.directions[3] = True
             self.directions[2] = False
 
-<<<<<<< HEAD
-
-=======
-        # adding 'B' key for boost functionality
-        # can be toggled on and off
->>>>>>> 10f86b73417743093e7a2b3d0fbb7145e238558f
         elif str(key) == "'b'":
             if (self.wheel_vel_forward == 100):
                 self.wheel_vel_forward = 150
@@ -54,12 +48,6 @@ class Keyboard:
                 self.wheel_vel_forward = 100
                 self.wheel_vel_rotation = 20
 
-<<<<<<< HEAD
-
-
-=======
-        # space key for stopping the bot
->>>>>>> 10f86b73417743093e7a2b3d0fbb7145e238558f
         elif key == Key.space:
             self.directions[:] = [False, False, False, False]
 
