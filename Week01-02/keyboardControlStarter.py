@@ -42,6 +42,7 @@ class Keyboard:
             self.directions[3] = True
             self.directions[2] = False
 
+
         elif str(key) == "'b'":
             if (self.wheel_vel_forward == 100):
                 self.wheel_vel_forward = 150
@@ -49,9 +50,6 @@ class Keyboard:
             else:
                 self.wheel_vel_forward = 100
                 self.wheel_vel_rotation = 20
-
-
-
 
 
 
