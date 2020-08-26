@@ -82,10 +82,10 @@ def calibrateBaseline(scale):
     # Once finished driving, compute the basline parameter by averaging
     num = len(wheel_velocities_range)
     baseline = 0
-    # TODO: compute baseline parameter
-    # ------------------------------------------
-    # ----------- Add your code here -----------
-    # ------------------------------------------
+
+    for delta_time, wheel_vel in zip(delta_times, wheel_velocities_range):
+        baseline += 1 / num * (2 * (wheel_vel * delta_time * scale)/2/np.pi)
+
     print("The baseline parameter is estimated as {:.2f} m.".format(baseline))
 
     return baseline
@@ -99,6 +99,8 @@ if __name__ == "__main__":
     scale = calibrateWheelRadius()
     fileNameS = "{}scale.txt".format(dataDir)
     np.savetxt(fileNameS, np.array([scale]), delimiter=',')
+    # fileNameS = "{}scale.txt".format(dataDir)         Uncomment it when you just want to calibrate baseline
+    scale = np.loadtxt(fileNameS, delimiter=',')
 
     print('Calibrating PiBot baseline...\n')
     baseline = calibrateBaseline(scale)

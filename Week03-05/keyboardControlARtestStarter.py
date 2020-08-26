@@ -6,7 +6,9 @@ import numpy as np
 
 # import OpenCV ARUCO functions
 import cv2.aruco as aruco
-
+import sys
+import os
+sys.path.insert(0, os.path.abspath('calibration'))
 # replace with your own keyboard teleoperation codes
 class Keyboard:
     # feel free to change the speed, or add keys to do so
@@ -29,21 +31,34 @@ class Keyboard:
         # use arrow keys to drive, space key to stop
         # feel free to add more keys
         if key == Key.up:
-            self.directions[0] = True
+            self.directions = [True, False, False, False]
         elif key == Key.down:
-            self.directions[1] = True
+            self.directions = [False, True, False, False]
         elif key == Key.left:
             self.directions[2] = True
+            self.directions[3] = False
         elif key == Key.right:
             self.directions[3] = True
+            self.directions[2] = False
+        # adding 'B' key for boost functionality
+        # can be toggled on and off
+        elif str(key) == "'b'":
+            if (self.wheel_vel_forward == 100):
+                self.wheel_vel_forward = 150
+                self.wheel_vel_rotation = 30
+            else:
+                self.wheel_vel_forward = 100
+                self.wheel_vel_rotation = 20
+
+        # space key for stopping the bot
         elif key == Key.space:
-            self.signal_stop = True
+            self.directions[:] = [False, False, False, False]
 
         self.send_drive_signal()
         
     def get_drive_signal(self):           
-        # translate the key presses into drive signals 
-        
+        # translate the key presses into drive signals
+
         # compute drive_forward and drive_rotate using wheel_vel_forward and wheel_vel_rotation
         # drive_forward = ???
         # drive_rotate = ???
@@ -51,14 +66,33 @@ class Keyboard:
         # translate drive_forward and drive_rotate into left_speed and right_speed
         # left_speed = ???
         # right_speed = ???
+        left_speed  = 0
+        right_speed = 0
 
+        # translate the key presses into drive signals
+        if self.directions[0]:
+            left_speed  = self.wheel_vel_forward
+            right_speed = self.wheel_vel_forward
+
+        if self.directions[1]:
+            left_speed  = -self.wheel_vel_forward
+            right_speed = -self.wheel_vel_forward
+
+        if self.directions[2]:
+            left_speed  -= self.wheel_vel_rotation
+            right_speed += self.wheel_vel_rotation
+
+        if self.directions[3]:
+            left_speed  += self.wheel_vel_rotation
+            right_speed -= self.wheel_vel_rotation
         return left_speed, right_speed
-    
+
     def send_drive_signal(self):
         if not self.ppi is None:
             lv, rv = self.get_drive_signal()
             lv, rv = self.ppi.set_velocity(lv, rv)
             self.wheel_vels = [lv, rv]
+            print(self.wheel_vels)
             
     def latest_drive_signal(self):
         return self.wheel_vels
@@ -78,7 +112,10 @@ if __name__ == "__main__":
         font = cv2.FONT_HERSHEY_SIMPLEX
         location = (0, 0)
         font_scale = 1
-        font_col = (255, 255, 255)
+        font_col_1 = (255, 255, 255)
+        font_col_2 = (0, 0, 255)
+        font_col_3 = (0, 255, 0)
+        font_col_4 = (255, 0, 0)
         line_type = 2
 
         # Get velocity of each wheel
@@ -88,7 +125,25 @@ if __name__ == "__main__":
 
         # Get current frame
         curr = ppi.get_image()
-        
+
+        # Boost flag for display
+        if L_Wvel > 120 or R_Wvel > 120:
+            BOOST_FLAG = "Send mode"
+        else:
+            BOOST_FLAG = "OFF"
+
+        # Direction flag for display
+        direction = ''
+        if (L_Wvel == R_Wvel) & ((L_Wvel + R_Wvel) > 0):
+            direction = 'Forward'
+        elif (L_Wvel == R_Wvel) & ((L_Wvel + R_Wvel) < 0):
+            direction = 'Backward'
+        elif L_Wvel < R_Wvel:
+            direction = 'Turn Left'
+        elif L_Wvel > R_Wvel:
+            direction = 'Turn Right'
+        elif L_Wvel == R_Wvel == 0:
+            direction = 'Stop'
         # uncomment to see how noises influence the accuracy of ARUCO marker detection
         #im = np.zeros(np.shape(curr), np.uint8)
         #cv2.randn(im,(0),(99))
@@ -109,7 +164,12 @@ if __name__ == "__main__":
         resized = cv2.resize(curr, (960, 720), interpolation = cv2.INTER_AREA)
 
         # Replace with your own GUI
-        cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col, line_type)
+        cv2.putText(resized, 'PenguinPi', (15, 50), font, font_scale, font_col_1, line_type)
+        cv2.putText(resized, 'Direction : ' + direction, (15, 550), font, font_scale, font_col_4, line_type)
+        cv2.putText(resized, 'Wheel Velocity : ' + str((L_Wvel + R_Wvel)/2), (15, 595), font, font_scale, font_col_3, line_type)
+        cv2.putText(resized, 'Left_W: ' + str(L_Wvel), (15, 630), font, 0.75, font_col_3, line_type)
+        cv2.putText(resized, 'Right_W: ' + str(R_Wvel), (15, 660), font, 0.75, font_col_3, line_type)
+        cv2.putText(resized, 'BOOST: ' + str(BOOST_FLAG), (15, 700), font, 1, font_col_2, line_type)
 
         cv2.imshow('video', resized)
 
