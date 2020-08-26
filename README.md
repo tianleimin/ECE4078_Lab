@@ -4,6 +4,8 @@ For lab sessions of unit ECE4078 (Intelligent Robotics)
 ## Instructions
 Please see each folder for every week's detailed instrcutions and getting-started codes.
 
+For each lab milestone you will design and implement a key component of an integrated system. These components are then reused in later sessions and together they enable the robot to navigate through a terrain and locate targets accurately. For each milestone there is no single solution and you are encouraged to design your own approach to solve the task.
+
 For discussion please join the [Slack channel](https://intelligentrobots2020.slack.com/archives/C0186M64UAY).
 
 ## Format
