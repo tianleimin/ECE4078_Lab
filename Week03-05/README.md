@@ -47,6 +47,8 @@ You will be marked by [the SLAM map your function generates](#SLAM-week-5) for t
 - Mapping (40pts): number of ARUCO markers found in the marking arena. 40pts for finding all the markers with correct IDs, each one missed -5pts
 - Localisation (60pts): locate the (x,y) coordinates of ARUCO markers in the marking arena. Every x OR y coordinate with more than 1.5m off its actual location -4pts
 
+Please submit your codes, calibration parameters, PenguinPi model (if you have made any changes to penguinpi.sdf), the best SLAM map you have generated for the testing arena, and a short readme on how to run your SLAM codes. During marking, we will run your SLAM codes both with your customoised calibration parameters and with a standard calibration parameter set. Whichever one yields better performance will be used as your mark. You SLAM map generated on the testing arena will help us identify if there is any influence of environment factors that needs to be adjusted to.
+
 ## Getting-started
 ### Launch the cardboard arena world (week 3)
 1. If you are a git user, simply run ```git pull``` to pull the new files into your repository. **Make sure you have saved a copy of your development before pulling.** Extract [aruco_tags.zip](models/aruco_tags.zip), [Coke.zip](models/Coke.zip) and [sheep.zip](models/sheep.zip) into ```catkin_ws/src/penguinpi_gazebo/models```. Once you extracted the files, you will have three folders inside the models folder, namely "aruco_tags", "Coke", and "sheep". Inside each of these folders, there should be a "model.sdf" file (e.g., ```catkin_ws/src/penguinpi_gazebo/models/Coke/model.sdf```), which allows Gazebo to spawn that model when the world is launched. If there is an existing folder for any of these models, you can replace them.
