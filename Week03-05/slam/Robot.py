@@ -25,7 +25,7 @@ class Robot:
         
         if angular_velocity == 0:
             x = self.state[0] + linear_velocity * dt
-            t = self.state[1] + linear_velocity * dt
+            y = self.state[1] + linear_velocity * dt
             theta = self.state[2]
         
         else:
@@ -36,7 +36,10 @@ class Robot:
             x = self.state[0] + R * (-np.sin(self.state[2]) + np.sin(theta))
             y = self.state[1] + R * ( np.cos(self.state[2]) - np.cos(theta))
 
-        self.state = [x, y, theta]
+        self.state[0] = x
+        self.state[1] = y
+        self.state[2] = theta
+
 
     def measure(self, markers, idx_list):
         # Markers are 2d landmarks in a 2xn structure where there are n landmarks.
