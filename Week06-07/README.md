@@ -73,7 +73,7 @@ Classification accuracy:
 1. Create a folder in your directory named "net_weights". Run [nn_train.py](nn_train.py) to train a baseline neural network. You can monitor the training process and its accuracy on the evaluation set in the terminal outputs. The trained neural network will be saved in the "net_weights" folder.
 2. After the training is done, run [nn_detect.py](nn_detect.py), which helps you visualize how the neural network detects sheep / coke / neither in different sements of a testing image [test.png](test.png).
 
-![Heat map of an example neural network detection outputs](https://github.com/tianleimin/ECE4078_Lab_Dev/blob/master/pics/test_nn_detect_output.png?raw=true "Heat map of an example neural network detection outputs")
+![Heat map of an example neural network detection outputs](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/test_nn_detect_output.png?raw=true "Heat map of an example neural network detection outputs")
 
 3. Make changes to [nn_config.yml](nn_config.yml) and retrain your model until you are happy with its performance. You may also [change the neural network model](#Neural-network-with-PyTorch) implemented in [baseline_net.py](baseline_net.py).
 4. Once you are satisfied with your network's performance on the evaluation set, test the trained model on the test set by running [nn_test.py](nn_test.py). This will give you an idea how well the trained model generalizes to unseen data.
