@@ -1,0 +1,46 @@
+# this yaml file contains essential parameters for training the neural network
+# you may change them to improve the performance
+
+# change the experiment name to start training a new one
+exp_name: 'pre_trained_01'
+
+
+# initial learning rate (can be tuned):
+# the starting point for the learning rate scheduler
+# a learning rate too high can lead to exploding or fluctuating loss
+# a learning rate too low can lead to slow learning or overfitting
+init_lr: 1.0e-5
+
+# batch size (can be tuned):
+# a smaller batch size means the parameters are updated using a smaller subset of the data
+# thus the parameter update will be more noisy, but the model may have better generalizability
+batch_size: 64
+
+# total number of epochs (can be tuned):
+# when to stop the training
+# a higher number of epochs can lead to overfitting
+n_epochs: 50
+
+# weight decay (can be tuned):
+# adding a penalty to the cost which can lead to smaller model weights
+weight_decay: 1.0e-5
+
+# 3 categories (no changes needed): 
+# coke = class 0, neither = class 1, sheep = class 2
+num_classes: 3
+
+# Two sets of network weights all kept during training (no changes needed):
+#   the latest epoch (not necessarily the best),
+#   and the best epoch evaluated against the evaluation metric.
+load_best: 1
+
+# GPU option (no changes needed)
+gpu_ids: '0'
+
+# learning rate scheduler (can be tuned): 
+# controls how fast the learning rate decreases
+# here, the learning rate is designed to be its 50% every 5 epoch.
+lr_scheduler:
+    step_size: 5
+    gamma: 0.50
+
