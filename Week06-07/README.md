@@ -53,7 +53,7 @@ The neural network model implemented in [baseline_net.py](baseline_net.py) is th
 Classification accuracy: 
 - Please submit your trained neural network by submitting the "net_weights" folder. If you have made changes to any of the python / yaml scripts please submit them as well.
 - Your trained model will be applied to a marking test set of 60 unseen images to predict their labels. 
-- If you have experimented with changing the neural network structure or using a differen neural network, you will be given a maximum of 10pts of exploration points. You will need to submit the custom neural network and its accompanying training / testing / configuration functions to demonstrate this.
+- If you have experimented with changing the neural network structure or using a differen neural network, you will be given a maximum of 10pts of exploration points. You will need to submit the custom neural network implementation, its accompanying training / testing / configuration functions, and a screenshot of the training printouts to demonstrate your exploration.
 - Your score (max 100pt) = the accuracy achieved by your trained network on the marking test set + exploration points. For example, if your best trained network achieved an accuracy of 85% on the test set and you have experimented with using VGG instead of AlexNet, then you will get 95pts (85+10) for M3.
 
 ## Getting-started
