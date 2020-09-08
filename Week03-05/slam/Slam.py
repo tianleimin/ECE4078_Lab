@@ -129,11 +129,11 @@ class Slam:
         # Draw landmarks
         if self.number_landmarks() > 0:
             ax.plot(self.markers[0,:], self.markers[1,:], 'ko')
-
+            
         # Draw robot
         arrow_scale = 0.4
-        ax.arrow(self.robot.state[0,0], self.robot.state[1,0],
-                 arrow_scale * np.cos(self.robot.state[2,0]), arrow_scale * np.sin(self.robot.state[2,0]),
+        ax.arrow(self.robot.state[0,0], self.robot.state[1,0], 
+                 arrow_scale * np.cos(self.robot.state[2,0]), arrow_scale * np.sin(self.robot.state[2,0]), 
                  head_width=0.3*arrow_scale)
 
         # Draw covariance

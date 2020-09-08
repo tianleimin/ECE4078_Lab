@@ -11,3 +11,5 @@
 2. > git add .
 3. > git commit -m "*some msg*"
 4. > git push
+
+watch -n 1 cat slam.txt
