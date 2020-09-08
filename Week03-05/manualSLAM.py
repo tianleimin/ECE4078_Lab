@@ -80,7 +80,11 @@ class Operate:
         # Output SLAM map as a json file
         map_dict = {"AR_tag_list":slam.taglist,
                     "map":slam.markers.tolist(),
-                    "covariance":slam.P[3:,3:].tolist()}
+                    "state_x": str(self.pibot.get_state()[0]),
+                    "state_y":str(self.pibot.get_state()[1]), 
+                    "state_z":str(self.pibot.get_state()[2]),
+                    "covariance":slam.P[3:,3:].tolist()
+                    }
         with open("slam.txt", 'w') as map_f:
             json.dump(map_dict, map_f, indent=2)
 

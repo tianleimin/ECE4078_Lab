@@ -18,7 +18,7 @@ class Keyboard:
         self.signal_stop = False 
         
         # feel free to change the speed, or add keys to do so
-        self.wheel_vel_forward = 100
+        self.wheel_vel_forward = 50
         self.wheel_vel_rotation = 20
 
         # connection to PenguinPi robot

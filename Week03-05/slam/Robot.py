@@ -24,8 +24,8 @@ class Robot:
         dt = drive_meas.dt
         
         if angular_velocity == 0:
-            x = self.state[0] + linear_velocity * dt
-            y = self.state[1] + linear_velocity * dt
+            x = self.state[0] + np.cos(self.state[2]) * linear_velocity * dt
+            y = self.state[1] + np.sin(self.state[2]) * linear_velocity * dt
             theta = self.state[2]
         
         else:
@@ -40,6 +40,8 @@ class Robot:
         self.state[1] = y
         self.state[2] = theta
 
+    def get_state(self):
+        return self.state
 
     def measure(self, markers, idx_list):
         # Markers are 2d landmarks in a 2xn structure where there are n landmarks.
@@ -158,3 +160,4 @@ class Robot:
         cov = Jac @ cov @ Jac.T
         
         return cov
+
