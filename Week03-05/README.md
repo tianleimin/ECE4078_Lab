@@ -118,7 +118,7 @@ The list of ARUCO markers and their actual x-y coordinates in the testing arena 
     - sigma_R: you can change the default value of ```sigma_R``` in [Measurements.py](slam/Measurements.py) in the definition of ```MarkerMeasurement``` class
     - sigma_Q: you can change the default value of ```sigma_Q``` by changing the covariance for left wheel and right wheel in the definition of ```control``` function in [manualSLAM.py](manualSLAM.py) when you declare ```drive_meas```. Further reference can be seen in the ```DriveMeasurement``` class in [Measurements.py](slam/Measurements.py)
     - dt: There are 2 ways to do this, either tune ```dt``` until you like it, or you can put the control loop in a scheduler so that it runs at an exact frequency (you can achieve the same thing by letting the loop sleep dynamically)
-    - [penguinpi.sdf](models/penguinpi.sdf): you may change the ```mu``` attributes of the wheel to change friction
+    - [penguinpi.sdf](models/penguinpi.sdf): you may change the friction coefficients parameters, for example, ```mu``` and ```mu2``` attributes of the wheels
     - Initialization: either manually input the pose in gazebo to (0, 0, 0) or set the initial P to be something other than ```np.zeros(3)```
 
 ## Acknowledgement
