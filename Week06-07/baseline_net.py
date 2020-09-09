@@ -15,8 +15,8 @@ class BaselineNet(nn.Module):
         self.features = nn.Sequential(*list(
                     mobilenet_features.children())[:-1])
         self.fc = nn.Sequential(
-                                nn.Dropout(p=0.9),
-                                nn.Linear(256*3*3, 512),
+                                nn.Dropout(p=0.5),
+                                nn.Linear(1280, 512),
                                 nn.ReLU(),
                                 nn.Linear(512, 64),
                                 nn.ReLU(),

@@ -9,12 +9,12 @@ exp_name: 'pre_trained_01'
 # the starting point for the learning rate scheduler
 # a learning rate too high can lead to exploding or fluctuating loss
 # a learning rate too low can lead to slow learning or overfitting
-init_lr: 2.0e-3
+init_lr: 1.0e-3
 
 # batch size (can be tuned):
 # a smaller batch size means the parameters are updated using a smaller subset of the data
 # thus the parameter update will be more noisy, but the model may have better generalizability
-batch_size: 64
+batch_size: 50
 
 # total number of epochs (can be tuned):
 # when to stop the training
@@ -23,7 +23,7 @@ n_epochs: 50
 
 # weight decay (can be tuned):
 # adding a penalty to the cost which can lead to smaller model weights
-weight_decay: 1.0e-5
+weight_decay: 1.5e-5
 
 # 3 categories (no changes needed): 
 # coke = class 0, neither = class 1, sheep = class 2
@@ -43,4 +43,3 @@ gpu_ids: '0'
 lr_scheduler:
     step_size: 5
     gamma: 0.5
-
