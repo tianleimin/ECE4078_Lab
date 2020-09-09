@@ -9,7 +9,7 @@ exp_name: 'pre_trained_01'
 # the starting point for the learning rate scheduler
 # a learning rate too high can lead to exploding or fluctuating loss
 # a learning rate too low can lead to slow learning or overfitting
-init_lr: 1.0e-5
+init_lr: 2.0e-3
 
 # batch size (can be tuned):
 # a smaller batch size means the parameters are updated using a smaller subset of the data
@@ -42,5 +42,5 @@ gpu_ids: '0'
 # here, the learning rate is designed to be its 50% every 5 epoch.
 lr_scheduler:
     step_size: 5
-    gamma: 0.50
+    gamma: 0.5
 
