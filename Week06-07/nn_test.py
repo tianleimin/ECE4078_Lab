@@ -22,8 +22,7 @@ class Test:
         self.net_dict = NNState(mode='eval')
         # Data Augmentation operations
         img_transforms = transforms.Compose(
-            [transforms.RandomRotation((-30, 30)),
-             transforms.RandomResizedCrop((64, 64), scale=(0.7, 1.0)),
+            [transforms.RandomResizedCrop((64, 64), scale=(0.7, 1.0)),
              transforms.ColorJitter(brightness=0.4, contrast=0.3,
                                     saturation=0.3, hue=0.3),
              transforms.ToTensor(),
