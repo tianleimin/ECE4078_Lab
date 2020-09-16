@@ -9,6 +9,7 @@
     - [Motion model (week 3)](#Motion-model-week-3)
     - [ARUCO marker detection (week 4)](#ARUCO-marker-detection-week-4)
     - [SLAM (week 5)](#SLAM-week-5)
+    - [Tips for improving your SLAM](#Tips-for-improving-your-SLAM)
 
 
 ## Introduction
@@ -128,6 +129,18 @@ The script [manualSLAM.py](manualSLAM.py) makes use of [keyboardControlARtestSta
 **Please fill in the code segment in [Slam.py](slam/Slam.py) ([line 45](slam/Slam.py#L45) and [line 71](slam/Slam.py#L71)) to complete Extended Kalman filter and finish you implementation of SLAM. Feel free to make changes to the current implementation of SLAM as it has a lot of space for improvements.** 
 
 The list of ARUCO markers and their actual x-y coordinates in the testing arena are provided in [PenguinPiArenaTruePose.csv](PenguinPiArenaTruePose.csv), which you can compare your "slam.txt" outputs with to see how accurate your SLAM is.
+
+### Tips for improving your SLAM
+- You can modify ```write_map``` function in [manualSLAM.py](manualSLAM.py) to show ```robot.state``` and check your motion model implementation.
+- Use ```watch -n 1 cat slam.txt``` to show the content of the file LIVE to monitor what is happening
+- More things that you can tune:
+    - Motion Model
+    - Everything in calibration process: baseline, scale, camera's variable
+    - sigma_R: you can change the default value of ```sigma_R``` in [Measurements.py](slam/Measurements.py) in the definition of ```MarkerMeasurement``` class
+    - sigma_Q: you can change the default value of ```sigma_Q``` by changing the covariance for left wheel and right wheel in the definition of ```control``` function in [manualSLAM.py](manualSLAM.py) when you declare ```drive_meas```. Further reference can be seen in the ```DriveMeasurement``` class in [Measurements.py](slam/Measurements.py)
+    - dt: There are 2 ways to do this, either tune ```dt``` until you like it, or you can put the control loop in a scheduler so that it runs at an exact frequency (you can achieve the same thing by letting the loop sleep dynamically)
+    - [penguinpi.sdf](models/penguinpi.sdf): you may change the friction coefficients parameters, for example, ```mu``` and ```mu2``` attributes of the wheels
+    - Initialization: either manually input the pose in gazebo to (0, 0, 0) or set the initial P to be something other than ```np.zeros(3)```
 
 ## Acknowledgement
 The cardboard arena is inspired by https://github.com/rfzeg/cardboard_arena

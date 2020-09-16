@@ -40,10 +40,13 @@ class Slam:
     # -------------
 
     def predict(self, raw_drive_meas):
-        # TODO: implement the prediction step of EKF
-        # ------------------------------------------
-        # ----------- Add your code here -----------
-        # ------------------------------------------
+
+        self.robot.drive(raw_drive_meas)
+        
+        A = self.state_transition(raw_drive_meas)
+        Q = self.predict_covariance(raw_drive_meas)
+        
+        self.P = A @ self.P @ A.T + Q
 
 
     def update(self, measurements):
@@ -67,9 +70,18 @@ class Slam:
         H = self.robot.derivative_measure(self.markers, idx_list)
 
         x = self.get_state_vector()
-        # ------------------------------------------
-        # ----------- Add your code here -----------
-        # ------------------------------------------
+        
+         # Kalman Gain
+        S = H @ self.P @ H.T + R
+        K = self.P @ H.T @ np.linalg.inv(S)
+        
+        # correct
+        y = z - z_hat
+        x = self.get_state_vector()
+        x = x + K @ y
+        self.set_state_vector(x)
+        # 6. Correct robot's covariance
+        self.P = (np.eye(x.shape[0]) - K @ H) @ self.P
 
 
     def state_transition(self, raw_drive_meas):
@@ -117,11 +129,11 @@ class Slam:
         # Draw landmarks
         if self.number_landmarks() > 0:
             ax.plot(self.markers[0,:], self.markers[1,:], 'ko')
-
+            
         # Draw robot
         arrow_scale = 0.4
-        ax.arrow(self.robot.state[0,0], self.robot.state[1,0],
-                 arrow_scale * np.cos(self.robot.state[2,0]), arrow_scale * np.sin(self.robot.state[2,0]),
+        ax.arrow(self.robot.state[0,0], self.robot.state[1,0], 
+                 arrow_scale * np.cos(self.robot.state[2,0]), arrow_scale * np.sin(self.robot.state[2,0]), 
                  head_width=0.3*arrow_scale)
 
         # Draw covariance

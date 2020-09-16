@@ -11,14 +11,15 @@ import os
 sys.path.insert(0, os.path.abspath('calibration'))
 # replace with your own keyboard teleoperation codes
 class Keyboard:
-    # feel free to change the speed, or add keys to do so
-    wheel_vel_forward = 100
-    wheel_vel_rotation = 20
 
     def __init__(self, ppi=None):
         # storage for key presses
         self.directions = [False for _ in range(4)]
         self.signal_stop = False 
+        
+        # feel free to change the speed, or add keys to do so
+        self.wheel_vel_forward = 50
+        self.wheel_vel_rotation = 20
 
         # connection to PenguinPi robot
         self.ppi = ppi
@@ -57,15 +58,7 @@ class Keyboard:
         self.send_drive_signal()
         
     def get_drive_signal(self):           
-        # translate the key presses into drive signals
 
-        # compute drive_forward and drive_rotate using wheel_vel_forward and wheel_vel_rotation
-        # drive_forward = ???
-        # drive_rotate = ???
-
-        # translate drive_forward and drive_rotate into left_speed and right_speed
-        # left_speed = ???
-        # right_speed = ???
         left_speed  = 0
         right_speed = 0
 
@@ -144,6 +137,7 @@ if __name__ == "__main__":
             direction = 'Turn Right'
         elif L_Wvel == R_Wvel == 0:
             direction = 'Stop'
+
         # uncomment to see how noises influence the accuracy of ARUCO marker detection
         #im = np.zeros(np.shape(curr), np.uint8)
         #cv2.randn(im,(0),(99))

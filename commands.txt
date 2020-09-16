@@ -1,0 +1,15 @@
+ source ~/catkin_ws/devel/setup.bash
+ roslaunch penguinpi_gazebo penguinpi.launch
+
+ cd ECE4078_Lab/Week01-02/
+ python3 test_camera_motors.py
+
+ cd /media/sf_ECE4078_Lab/Week01-02
+
+
+1. create file
+2. > git add .
+3. > git commit -m "*some msg*"
+4. > git push
+
+watch -n 1 cat slam.txt
