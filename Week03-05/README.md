@@ -30,7 +30,8 @@ Note: if you are unable to install opencv due to the error "No module named skbu
 ### SLAM (Simultaneous localization and mapping)
 ![Example output of SLAM](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/SLAM_map.png?raw=true "Example output of SLAM")
 
-You will be implementing [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) with Extended Kalman filter, which uses the drive signals and the ARUCO markers to perform localisation and mapping.
+You will be implementing [SLAM](https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping) with Extended Kalman filter,
+which uses the drive signals and the ARUCO markers to perform localisation and mapping.
 
 ## Objectives
 - Week 3: [Motion model](#Motion-model-week-3)
@@ -38,33 +39,50 @@ You will be implementing [SLAM](https://en.wikipedia.org/wiki/Simultaneous_local
 - Week 5: [Manual SLAM in the cardboard arena](#SLAM-week-5)
 
 ## Marking schemes
-You will be developing a manual SLAM function using [drive signals](#Motion-model-week-3) and [ARUCO markers](#ARUCO-marker-detection-week-4) inside [the testing arena](#Launch-the-cardboard-arena-world). The M2 assignment submission on Moodle will be open in Week 5 and will be due in Week 6.
+You will be developing a manual SLAM function using [drive signals](#Motion-model-week-3) and
+[ARUCO markers](#ARUCO-marker-detection-week-4) inside [the testing arena](#Launch-the-cardboard-arena-world).
+The M2 assignment submission on Moodle will be open in Week 5 and will be due in Week 6.
 
-You can follow the provided skeleton code and fill in the missing segments, or make changes to the current implementation as it has a lot of room for improvements. You can even implement everything from scratch as long as your implementation of SLAM makes use of the drive signals and ARUCO markers, and produces a list of the ARUCO marker IDs with their estimated x-y coordinates.
+You can follow the provided skeleton code and fill in the missing segments, or make changes to the current implementation as it has a lot of room for improvements.
+You can even implement everything from scratch as long as your implementation of SLAM makes use of the drive signals and ARUCO markers,
+and produces a list of the ARUCO marker IDs with their estimated x-y coordinates.
 
-For marking, the robot will follow a scripted trajatory to traverse a marking arena, which has a different layout than the testing arena. In particular, it will have a different number of ARUCO markers at different locations, and variations in the walls / figurine locations. 
+For marking, the robot will follow a scripted trajatory to traverse a marking arena, which has a different layout than the testing arena.
+In particular, it will have a different number of ARUCO markers at different locations, and variations in the walls / figurine locations.
 
 You will be marked by [the SLAM map your function generates](#SLAM-week-5) for the marking arena:
-- Mapping (40pts): number of ARUCO markers found in the marking arena. 40pts for finding all the markers with correct IDs, each one missed -5pts
-- Localisation (60pts): locate the (x,y) coordinates of ARUCO markers in the marking arena. Every x OR y coordinate with more than 1.5m off its actual location -4pts
+- Mapping (40pts): number of ARUCO markers found in the marking arena.
+40pts for finding all the markers with correct IDs, each one missed -5pts
+- Localisation (60pts): locate the (x,y) coordinates of ARUCO markers in the marking arena.
+Every x OR y coordinate with more than 1.5m off its actual location -4pts
 
 Please submit your codes, calibration parameters, PenguinPi model (if you have made any changes to penguinpi.sdf), the best SLAM map you have generated for the testing arena, and a short readme on how to run your SLAM codes. During marking, we will run your SLAM codes both with your customoised calibration parameters and with a standard calibration parameter set. Whichever one yields better performance will be used as your mark. You SLAM map generated on the testing arena will help us identify if there is any influence of environment factors that needs to be adjusted to.
 
 ## Getting-started
 ### Launch the cardboard arena world (week 3)
-1. If you are a git user, simply run ```git pull``` to pull the new files into your repository. **Make sure you have saved a copy of your development before pulling.** Extract [aruco_tags.zip](models/aruco_tags.zip), [Coke.zip](models/Coke.zip) and [sheep.zip](models/sheep.zip) into ```catkin_ws/src/penguinpi_gazebo/models```. Once you extracted the files, you will have three folders inside the models folder, namely "aruco_tags", "Coke", and "sheep". Inside each of these folders, there should be a "model.sdf" file (e.g., ```catkin_ws/src/penguinpi_gazebo/models/Coke/model.sdf```), which allows Gazebo to spawn that model when the world is launched. If there is an existing folder for any of these models, you can replace them.
+1. If you are a git user, simply run ```git pull``` to pull the new files into your repository. **Make sure you have saved a copy of your development before pulling.
+** Extract [aruco_tags.zip](models/aruco_tags.zip), [Coke.zip](models/Coke.zip) and [sheep.zip](models/sheep.zip) into ```catkin_ws/src/penguinpi_gazebo/models```.
+Once you extracted the files, you will have three folders inside the models folder, namely "aruco_tags", "Coke", and "sheep".
+Inside each of these folders, there should be a "model.sdf" file (e.g., ```catkin_ws/src/penguinpi_gazebo/models/Coke/model.sdf```), which allows Gazebo to spawn that model when the world is launched.
+If there is an existing folder for any of these models, you can replace them.
 2. Copy [penguinpi_arena.world](models/penguinpi_arena.world) into ```catkin_ws/src/penguinpi_gazebo/worlds```.
 3. Copy [penguinpi_arena.launch](models/penguinpi_arena.launch) into ```catkin_ws/src/penguinpi_gazebo/launch```.
 4. Copy [penguinpi.sdf](models/penguinpi.sdf) and replace the original model file in ```catkin_ws/src/penguinpi_description/urdf/penguinpi.sdf```. This new PenguinPi model has increased wheel frictions so it's less likely for the robot to over-turn or drift after it stops.
 5. Run ```source ~/catkin_ws/devel/setup.bash``` in terminal.
 6. Run ```roslaunch penguinpi_gazebo penguinpi_arena.launch``` in terminal.
-7. You should see a cardboard arena with ARUCO markers on its walls in the Gazebo simulator. Inside there should be a PenguinPi robot, two sheep figurines and two coke cans. This will be your testing arena. You can command the robot to move inside the arena and get its camera feed using the keyboard teleoperation you developed in Week 2. Note that the marking environment will have a different layout than the testing environment. You can also vary the environment yourself by editing ```penguinpi_arena.world``` during your development.
+7. You should see a cardboard arena with ARUCO markers on its walls in the Gazebo simulator.
+Inside there should be a PenguinPi robot, two sheep figurines and two coke cans. This will be your testing arena.
+You can command the robot to move inside the arena and get its camera feed using the keyboard teleoperation you developed in Week 2.
+Note that the marking environment will have a different layout than the testing environment.
+You can also vary the environment yourself by editing ```penguinpi_arena.world``` during your development.
 
 ![PenguinPi Arena](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/PenguinPiArena.png?raw=true "The Cardboad Arena with PenguinPi robot and figurines in there")
 
 8. AWS remote desktop works in the same way as a local VM.
 
-9. Note: If you are using ROS development studio, Gazebo webservice visulization has some texture issue and doesn't load some objects or colors properly. However, in the "Graphical Tools", camera feed of the robot looks the same as inside local VM, only the Gazebo visualisation has trouble. You should still be able to do mapping and localisation using the camera feed. 
+9. Note: If you are using ROS development studio, Gazebo webservice visulization has some texture issue and doesn't load some objects or colors properly.
+However, in the "Graphical Tools", camera feed of the robot looks the same as inside local VM, only the Gazebo visualisation has trouble.
+gitYou should still be able to do mapping and localisation using the camera feed.
 
     You can also use gzclient that opens Gazebo inside the "Graphical Tools", which loads the objects and colors but is more laggy. 
 
@@ -85,7 +103,10 @@ Please submit your codes, calibration parameters, PenguinPi model (if you have m
 ### Motion model (week 3)
 Using the drive signals, you can estimate the resulting location of the robot. **Please fill in the code segment in [Robot.py](slam/Robot.py) ([line 27](slam/Robot.py#L27)) to complete this motion model.** As shown in [Measurements.py](slam/Measurements.py), this motion model will be used by the SLAM function.
 
-**You may improve this estimation by calibrating the wheels**: [default wheel calibration settings](calibration/wheel_calibration) have been provided. However, this calibration may not apply to your environment. **To re-calibrate the wheels, please fill in the code segment in [wheel_calibration.py](calibration/wheel_calibration.py) ([line 87](calibration/wheel_calibration.py#L87)) to complete the calculation of the baseline parameter.** This script will drive the robot straight at different speeds, and then spin it at different speeds (feel free to change the speed ranges and steps). Note: this script needs [penguinPiC.py](https://github.com/tianleimin/ECE4078_Lab/blob/master/Week01-02/penguinPiC.py) from Week 2 inside the same directory when running.
+**You may improve this estimation by calibrating the wheels**: [default wheel calibration settings](calibration/wheel_calibration) have been provided. However, this calibration may not apply to your environment.
+**To re-calibrate the wheels, please fill in the code segment in [wheel_calibration.py](calibration/wheel_calibration.py) ([line 87](calibration/wheel_calibration.py#L87)) to complete the calculation of the baseline parameter.
+** This script will drive the robot straight at different speeds, and then spin it at different speeds (feel free to change the speed ranges and steps).
+Note: this script needs [penguinPiC.py](https://github.com/tianleimin/ECE4078_Lab/blob/master/Week01-02/penguinPiC.py) from Week 2 inside the same directory when running.
 
 You can drag and move the robot inside Gazebo. The ground grids are 1m by 1m. By clicking on World -> PenguinPi -> pose you can view exact coordinates of the robot for calibration.
 

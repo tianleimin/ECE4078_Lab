@@ -58,3 +58,6 @@ def parse_label_file(img_folder, dest_root):
 
 if __name__ == '__main__':
     parse_label_file('./dataset_provided', './dataset_segmented')
+
+#elif __name__ == '__main__':
+ #   parse_label_file('./dataset(2)', './dataset_segmented')
