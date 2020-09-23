@@ -10,13 +10,13 @@ import torchvision.models as models
 class BaselineNet(nn.Module):
     def __init__(self, num_classes=3):
         super(BaselineNet, self).__init__()
-        pre_trained_backbone = models.alexnet(pretrained=True)
-        alex_features = pre_trained_backbone.features
+        pre_trained_backbone = models.mnasnet1_3(pretrained=True)
+        mnasnet1_3_features = pre_trained_backbone.features
         self.features = nn.Sequential(*list(
-                    alex_features.children())[:-1])
+                    mnasnet1_3_features.children())[:-1])
         self.fc = nn.Sequential(
                                 nn.Dropout(p=0.5),
-                                nn.Linear(256*3*3, 512),
+                                nn.Linear(1280, 512),
                                 nn.ReLU(),
                                 nn.Linear(512, 64),
                                 nn.ReLU(),
