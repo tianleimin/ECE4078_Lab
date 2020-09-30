@@ -494,7 +494,7 @@
 
 <!-- Ar Tag 5 on Wall 13 -->
       <model name='sign_ar_tag_5'>
-        <pose frame=''>-0.50128 1.538357 -0.587675 0 0 1.571</pose>
+        <pose frame=''>-0.50128 1.538357 -0.587675 0 0 0</pose>
         <scale>1 1 1</scale>
         <link name='sign_link'>
           <pose frame=''>-0.50128 1.538357 0.312325 1.5708 0 0</pose>
