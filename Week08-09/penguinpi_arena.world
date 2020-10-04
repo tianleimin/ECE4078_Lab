@@ -1,0 +1,1938 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <world name='default'>
+    <scene>
+      <ambient>0.5 0.5 0.5 1.0</ambient>
+      <shadows>0</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+
+   <model name='wall_0'>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='cardboard_wall::link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+   <model name='wall_1'>
+    <pose frame=''>-1.902161 2.103332 0 0 0 -1.063039</pose> 
+      <static>1</static>
+      <link name='cardboard_wall::link'>
+        <pose frame=''>0 0 0.25 0 0 0</pose> 
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='wall_2'>
+      <pose frame=''>0.525 -0.675 0 0 -0 1.571</pose>
+      <static>1</static>
+      <link name='cardboard_wall::link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='wall_3'>
+      <pose frame=''>1.725 -0.675 0 0 -0 1.571</pose>
+      <static>1</static>
+      <link name='cardboard_wall::link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='wall_4'>
+      <pose frame=''>1.725 -0.675 0 0 -0 1.571</pose>
+      <static>1</static>
+      <link name='cardboard_wall::link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+
+
+    <model name='papptown_wall'>
+      <pose frame=''>4.70439 0.606533 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='cardboard_wall_0'>
+      <pose frame=''>5.23149 1.71557 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='cardboard_wall_1'>
+      <pose frame=''>5.21631 2.8575 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <state world_name='default'>
+      <sim_time>4106 523000000</sim_time>
+      <real_time>86 695150834</real_time>
+      <wall_time>1502457974 733726605</wall_time>
+      <iterations>85844</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+        </link>
+      </model>
+
+<!-- Ar Tag 1 on Wall 2 -->
+      <model name='sign_ar_tag_1'>
+        <pose frame=''>-1.274707 -0.458379 -0.587675 0 0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>-1.274707 -0.458379 0.312325 1.5708 0 0</pose>
+        </link>
+      </model>
+      <model name='wall_2'>
+        <pose frame=''>-1.31036 -0.471372 0 0 0 1.571</pose>
+        <scale>1 1 1</scale>
+        <link name='cardboard_wall::link'>
+          <pose frame=''>-1.31036 -0.471372 0.25 0 0 1.571</pose>
+        </link>
+      </model>
+
+<!-- Ar Tag 11 on Wall 15 -->
+      <model name='sign_ar_tag_11'>
+        <pose frame=''>1.472976 1.574148 -0.5966 0 0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>1.472976 1.574148 0.3034 1.5708 0 1.5708</pose>
+        </link>
+      </model>
+      <model name='cardboard_wall_15'>
+        <pose frame=''>1.48118 1.58183 0 0 0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.48118 1.58183 0.25 0 0 0</pose> 
+        </link>
+      </model>
+
+      <model name='sign_ar_tag_3'>
+        <pose frame=''>-1.075032 4.12235 -0.587675 0 0 0.653015</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>-1.075032 4.12235 0.312325 1.5708 0 0.653015</pose>
+        </link>
+      </model>
+
+<!-- Ar Tag 5 on Wall 13 -->
+      <model name='sign_ar_tag_5'>
+        <pose frame=''>-0.50128 1.538357 -0.587675 0 0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>-0.50128 1.538357 0.312325 1.5708 0 0</pose>
+        </link>
+      </model>
+      <model name='cardboard_wall_13'>
+        <pose frame=''>-0.42102 1.54719 0 0 0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.42102 1.54719 0.25 0 0 1.5708</pose>
+        </link>
+      </model>
+
+<!-- Ar Tag 7 on Cardboard Wall 2 -->
+      <model name='sign_ar_tag_7'>
+        <pose frame=''>2.074430 4.07726 -0.587499 0 0 -1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>2.074430 4.07666 0.312494 1.5708 0 -1.5708</pose>
+        </link>
+      </model>
+      <model name='cardboard_wall_2'>
+        <pose frame=''>2.082237 4.1509 0 0 0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.082237 4.1509 0.25 0 0 0</pose>
+        </link>
+      </model>
+
+      <model name='sign_ar_tag_9'>
+       <pose frame=''>3.11284 0.882415 -0.587675 0 -0.033788 1.06818</pose> 
+        <scale>1 1 1</scale>
+        <link name='sign_link'>
+          <pose frame=''>3.09819 0.855772 0.311811 1.5708 -0.033788 1.06818</pose>
+        </link>
+      </model>
+
+
+      <model name='papptown_wall'>
+        <pose frame=''>2.99213 0.632201 0 0 0 -0.496041</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.99213 0.632201 0.25 0 0 -0.496041</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cardboard_wall_0'>
+        <pose frame=''>3.27717 1.75486 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.27717 1.75486 0.25 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cardboard_wall_1'>
+        <pose frame=''>3.27813 2.95004 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>3.27813 2.95004 0.25 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cardboard_wall_10'>
+        <pose frame=''>-1.586482 3.74568 0 0 0 -0.913867</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.586482 3.74568 0.25 0 0 -0.913867</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_12'>
+        <pose frame=''>2.67466 3.55304 0 0 0 1.5708</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>2.67466 3.55304 0.25 0 0 1.5708</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_14'>
+        <pose frame=''>1.141335 2.670660 0 0 0 0.602378</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.141335 2.670660 0.25 0 0 0.602378</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_16'>
+        <pose frame=''>-0.136002 2.052702 0 0 0 0.561861</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.136002 2.052702 0.25 0 0 0.561861</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_17'>
+        <pose frame=''>1.07406 -0.483414 0 0 -0 1.55682</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.07406 -0.483414 0.25 0 -0 1.55682</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_3'>
+        <pose frame=''>-1.0 0.136322 0 0 0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.0 0.136322 0.25 0 0 0</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_4'>
+        <pose frame=''>1.531467 4.591352 0 0 0 -1.267093</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.531467 4.591352 0.25 0 0 -1.267093</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_6'>
+        <pose frame=''>0.40415 4.62139 0 0 -0 1.20901</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.40415 4.62139 0.25 0 -0 1.20901</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_7'>
+        <pose frame=''>-2.163054 1.268556 0 0 0 0.439611</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-2.163054 1.268556 0.25 0 0 0.439611</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_8'>
+        <pose frame=''>-1.732862 2.89135 -0.009289 0 -0 0.602379</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-1.732862 2.89135 0.240711 0 -0 0.602379</pose>
+        </link>
+      </model>
+
+      <model name='cardboard_wall_9'>
+        <pose frame=''>-0.63104 4.47149 0 0 0 -0.92579</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.63104 4.47149 0.25 0 0 -0.92579</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='wall_0'>
+        <pose frame=''>-1.908932 0.129803 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='cardboard_wall::link'>
+          <pose frame=''>-1.908932 0.129803 0.25 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+       <model name='wall_1'>
+        <pose frame=''>-1.902161 2.103332 0 0 0 -1.063039</pose> 
+        <scale>1 1 1</scale>
+        <link name='cardboard_wall::link'>
+          <pose frame=''>-1.902161 2.103332 0.25 0 0 -1.063039</pose> 
+        </link>
+      </model>
+
+    
+      <model name='wall_3'>
+        <pose frame=''>-0.11385 -0.47283 0 0 -0 1.571</pose>
+        <scale>1 1 1</scale>
+        <link name='cardboard_wall::link'>
+          <pose frame=''>-0.11385 -0.47283 0.25 0 -0 1.571</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+
+      <model name='wall_4'>
+        <pose frame=''>2.19273 -0.194333 0 0 -0 2.094</pose>
+        <scale>1 1 1</scale>
+        <link name='cardboard_wall::link'>
+          <pose frame=''>2.19273 -0.194333 0.25 0 -0 2.094</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+
+    <model name='cardboard_wall_2'>
+      <pose frame=''>5.21763 4.07889 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='cardboard_wall_3'>
+      <pose frame=''>5.18145 5.49121 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_4'>
+      <pose frame=''>3.82683 4.61006 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_6'>
+      <pose frame=''>2.75107 4.70273 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_7'>
+      <pose frame=''>0.08316 2.6218 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_8'>
+      <pose frame=''>0.366491 3.15214 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_9'>
+      <pose frame=''>1.62531 5.00814 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_10'>
+      <pose frame=''>0.736135 3.50499 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='cardboard_wall_12'>
+      <pose frame=''>4.29886 3.10857 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_13'>
+      <pose frame=''>1.30298 1.85283 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_14'>
+      <pose frame=''>1.87562 3.11814 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+
+    <model name='cardboard_wall_15'>
+      <pose frame=''>3.48613 1.88092 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_16'>
+      <pose frame=''>-0.136002 2.052702 0 0 0 0.561861</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 0 0.561861</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='cardboard_wall_17'>
+      <pose frame=''>3.48613 1.88092 0 0 -0 0</pose>
+      <static>1</static>
+      <link name='link'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.015 1.2 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.57 0.417 0.25 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 0</emissive>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <model name='sign_ar_tag_1'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/1</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/1</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-4 0.505484 0 0 -0 0</pose>
+    </model>
+    <model name='sign_ar_tag_3'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/3</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/3</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-4 0 0 0 -0 0</pose>
+    </model>
+    <model name='sign_ar_tag_5'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/5</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/5</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-1 0 0 0 -0 0</pose>
+    </model>
+    <model name='sign_ar_tag_7'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/7</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/7</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>3 3 0 0 -0 0</pose>
+    </model>
+    <model name='sign_ar_tag_9'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/9</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 -0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/9</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0 3 0 0 -0 0</pose>
+    </model>
+
+    <model name='sign_ar_tag_11'>
+      <static>1</static>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_A.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/11</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='sign_link'>
+        <pose frame=''>0 0 0.9 1.5708 0 0</pose>
+        <collision name='sign_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='sign_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://aruco_tags/meshes/sign_ar_tag_B.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://aruco_tags/materials/scripts</uri>
+              <uri>model://aruco_tags/materials/textures</uri>
+              <name>ARTag/11</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1 0.457108 0 0 -0 0</pose>
+    </model>
+
+    <include>
+      <uri>model://penguinpi_description</uri>
+      <pose>0 0 0.02 0 -0.0725 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sheep</uri>
+      <name>sheep1</name>
+      <pose>1.5 0.5 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://sheep</uri>
+      <name>sheep2</name>
+      <pose>-0.5 4 0 0 0 -2.2</pose>
+    </include>
+
+    <include>
+      <uri>model://Coke</uri>
+      <name>Coke1</name>
+      <pose>-1.5 0.2 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://Coke</uri>
+      <name>Coke2</name>
+      <pose>2.5 3 0 0 0 0</pose>
+    </include>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2.48856 -7.00483 10.7421 0 0.750201 1.59511</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.005</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>100</real_time_update_rate>
+    </physics>
+  </world>
+</sdf>
