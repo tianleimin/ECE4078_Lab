@@ -26,7 +26,7 @@ The starter code [autonav_starter.py](autonav_starter.py) provides a basic imple
 Implement an auto mapping and navigation function that locates ARUCO markers in an area and identifies paths between them.
 
 ## Marking schemes
-Your implementation will be executed in a marking arena, which has a different layout than the testing arena. In the marking arena the robot will still start at (0,0) and there will be two markers visible at the starting point. There are 8 markers in total for the marking arena.
+Your implementation will be executed in a marking arena, which has a different layout than the testing arena. In the marking arena the robot will still start at (0,0) and there will be three markers visible at the starting point. There are 8 markers in total for the marking arena.
 
 1. Number of markers found (16pts): each marker found +2pts
 2. Estimated (x,y) pose of markers (16pts): each estimated x OR y of a marker within 1m of the true x OR y +1pts (if multiple estmations are given for the same marker the estimation closest to the true pose will be used for marking)
