@@ -2207,7 +2207,7 @@
     <include>
       <uri>model://sheep</uri>
       <name>sheep2</name>
-      <pose>2.5 3 0 0 0 -2.2</pose>
+      <pose>1.961478 1.904029 0 0 0 -2.2</pose>
     </include>
 
     <gui fullscreen='0'>
