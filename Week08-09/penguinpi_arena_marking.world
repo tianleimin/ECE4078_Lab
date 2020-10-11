@@ -564,10 +564,10 @@
 
 <!-- Ar Tag 9 on wall 0 -->
       <model name='sign_ar_tag_9'>
-       <pose frame=''>3.267176 3.214109 -0.587499 0 0 -1.5708</pose> 
+       <pose frame=''>3.267176 2.676154 -0.587499 0 0 -1.5708</pose> 
         <scale>1 1 1</scale>
         <link name='sign_link'>
-          <pose frame=''>3.267176 3.214109 0.312494 1.5708 0 -1.5708</pose>
+          <pose frame=''>3.267176 2.676154 0.312494 1.5708 0 -1.5708</pose>
         </link>
       </model>
       <model name='cardboard_wall_0'>
