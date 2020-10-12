@@ -30,7 +30,7 @@ Your implementation will be executed in a marking arena, which has a different l
 
 1. Number of markers found (16pts): each marker found +2pts
 2. Estimated (x,y) pose of markers (16pts): each estimated x OR y of a marker within 1m of the true x OR y +1pts (if multiple estmations are given for the same marker the estimation closest to the true pose will be used for marking)
-3. Number of paths found (24pts): each path found +2pts until reaching the maximum 24pts
+3. Number of paths found (24pts): each path found +2pts until reaching the maximum 24pts. *If you simply generate a fully connected graph without having the robot drive in the arena you will lose all 24pts as a penalty.*
 4. Estimated path distance (24pts): each estimated distance of a path less than 1m off the true distance +2pts until reaching the maximum 24pts (if multiple estimations are given for a path's distance the estimation closest to the true distance will be used for marking)
 5. Time spent generating the map (20pts): 0pt if mapping takes 20 minutes or longer; 5pts if mapping takes 15-20 minutes; 10pts if mapping takes 10-15 minutes; 15pts if mapping takes 5-10 minutes; 20pts if mapping takes less than 5 minutes.
 
