@@ -68,9 +68,9 @@ while len(marker_list) < total_marker_num:
     seen_ids = []
     #for step in range(int(spin_time*fps)):
     step = 0
-    diff = 0
+    mse = 0
     threshold = 1.0e-3
-    while diff < threshold:
+    while mse < threshold:
 
         # spinning and looking for markers at each step
         ppi.set_velocity(-wheel_vel, wheel_vel, 1/fps)
@@ -78,11 +78,11 @@ while len(marker_list) < total_marker_num:
 
         
         if (step == 0):
-            initial_frame = ppi.get_image()
-        else:
+            initial = ppi.get_image()
+        elif (step>10):
             # get current frame
             curr = ppi.get_image()
-            mse = (np.square(initial_frame - curr)).mean()
+            mse = (np.square(initial - curr)).mean()
 
         
 
