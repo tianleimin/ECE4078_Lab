@@ -23,10 +23,10 @@ As no written report is needed for M5, the total mark for M5 is 80pts. You resul
   - The robot drives through the arena entirely by teleoperation: 5pts
   - The robot drives through the arena partially autonomously, e.g., it needs manual resets when getting stuck or lost, or it needs manual logging of targets / markers, or it switches between auto or manual driving for different parts of the map: 10pts
   - The robot drives through the arena fully autonomously: 15pts
-- Task (10pts)
+- Task (4pts)
   - The robot finds at least one ARUCO marker within 10 minutes (1pts)
   - The robot can estimate the (x,y) coordinates of at least one ARUCO marker within 10 minutes that is within 2m (Euclidean distance) of the actual pose (1pts)
-  - The robot finds at least one sheep figurine or coke can within 10 minutes that is within 2m (Euclidean distance) of the actual pose (1pts)
+  - The robot finds at least one sheep figurine or coke can (1pts)
   - The robot can estimate the (x,y) coordinates of at least one sheep figurine or coke can within 10 minutes that is within 2m (Euclidean distance) of the actual pose (1pts)
 - Time (6pts):
   - 3pts if the robot finds all the targets (ARUCO marker, sheep, coke) and finishes generating the map within 10 minutes (simulator world clock)
