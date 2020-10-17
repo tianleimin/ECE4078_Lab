@@ -44,7 +44,7 @@ As no written report is needed for M5, the total mark for M5 is 80pts. You resul
 
 ## Getting-started
 ### Load the development arena for testing your integrated system
-1. Extract [fense.zip](fense.zip) to your ```catkin_ws/src/penguinpi_gazebo/models``` directory. This is the model of a 12m x 12m fense for the arena
+1. Extract [fence.zip](fence.zip) to your ```catkin_ws/src/penguinpi_gazebo/models``` directory. This is the model of a 12m x 12m fence for the arena
 2. Copy [demo_arena_dev.world](demo_arena_dev.world) to your ```catkin_ws/src/penguinpi_gazebo/worlds``` directory, and [demo_arena_dev.launch](demo_arena_dev.launch) to your ```catkin_ws/src/penguinpi_gazebo/launch``` directory
 3. Launch the arena by running the following commands inside the terminal
 ```
