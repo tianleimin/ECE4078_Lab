@@ -356,7 +356,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='fense'>
+      <model name='fence'>
         <pose frame=''>-6 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='cardboard_wall::link'>
@@ -1283,7 +1283,7 @@
       </link>
       <pose frame=''>1 0.457108 0 0 -0 0</pose>
     </model>
-    <model name='fense'>
+    <model name='fence'>
       <link name='cardboard_wall::link'>
         <pose frame=''>0 3.6 0.25 0 -0 0</pose>
         <self_collide>0</self_collide>
