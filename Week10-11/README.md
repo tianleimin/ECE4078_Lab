@@ -21,7 +21,7 @@ As no written report is needed for M5, the total mark for M5 is 80pts. You resul
 ### Live demo marking scheme (25pts)
 - Robot control (15pts at most) 
   - The robot drives through the arena entirely by teleoperation: 5pts
-  - The robot drives through the arena partially autonomously, e.g., it needs manual resets when getting stuck or lost, or it needs manual logging of targets / markers, or it switches between auto or manual driving for different parts of the map: 10pts
+  - The robot drives through the arena partially autonomously, that is, the robot is able to autonomously drive and locate targets, but needs manual intervention during its run through the arena. For example, you may have the robot automatically explore part of the arena and then manually move it to another part of the arena and set it to automatically explore again: 10pts
   - The robot drives through the arena fully autonomously: 15pts
 - Task (4pts)
   - The robot finds at least one ARUCO marker within 10 minutes (1pts)
