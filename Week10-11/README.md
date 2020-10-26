@@ -65,3 +65,4 @@ To help you estimate the pose of the sheep figurine and the coke can, below are 
 ## FAQs
 1. In your implementation and submission, make sure that the actual location of the targets retrieved from Gazebo are not called anywhere. 
 2. You will need to automatically detect targets. Manual object classification is not permitted.
+3. For the same target you can provide at most 3 estimations.
