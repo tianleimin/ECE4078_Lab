@@ -69,3 +69,4 @@ To help you estimate the pose of the sheep figurine and the coke can, below are 
 4. There will be no more than 7 sheep, 7 coke cans, and 15 ARUCO markers in each of the marking map. Thus, you can only provide estimations for no more than 7 sheep, 7 coke cans, and 15 ARUCO markers in the generated map.
 5. No sheep or coke cans will be in the paths between two ARUCO markers in the marking map, similar to demo_arena_dev_no_collision.world
 6. The timer only stops when your map is finalized.
+7. You cannot get the ARUCO marker IDs from the Gazebo model's name or a pre-defined list of markers.
