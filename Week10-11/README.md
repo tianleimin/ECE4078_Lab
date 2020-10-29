@@ -63,10 +63,10 @@ To help you estimate the pose of the sheep figurine and the coke can, below are 
 ![The development arena](https://github.com/tianleimin/ECE4078_Lab/blob/master/pics/DevArena.png?raw=true "The development arena for testing your integrated system")
 
 ## FAQs
-1. In your implementation and submission, make sure that the actual location of the targets retrieved from Gazebo are not called anywhere.
-2. You will need to automatically classify targets. Manual object classification (manually entering the correct name of an object to be classified) is not permitted. You CAN manually switch the object detection component on or off (with your neural network model then automatically detecting which object the robot sees and estimating its pose), which counts as partial manual robot control (10pts). You CANNOT manually enter annotations of camera images, such as telling the robot which part of an image is a sheep by manually putting a bounding box around the sheep.
+1. In your implementation and submission, the actual location of the targets retrieved from Gazebo must not be called anywhere. 
+2. You will need to automatically classify targets. Manual object classification (manually entering the correct name of an object to be classified) is not permitted. You CAN manually switch the object detection component on or off (with your neural network model then automatically detecting which object the robot sees and estimating its pose), which counts as partial manual robot control (10pts). You CANNOT manually enter annotations of camera images, such as telling the robot which part of an image is a sheep by manually putting a bounding box around the sheep, or manually capture the current location of the robot as the location of the object that the robot is right next to.
 3. For the same target you can provide at most 3 estimations in the generated map (you can make as many estimations during the run as possible, this is only limiting how many estimations you can print in the map that you submit for marking).
 4. There will be no more than 7 sheep, 7 coke cans, and 15 ARUCO markers in each of the marking map. Thus, you can only provide estimations for no more than 7 sheep, 7 coke cans, and 15 ARUCO markers in the generated map.
-5. No sheep or coke cans will be in the paths between two ARUCO markers in the marking map, similar to demo_arena_dev_no_collision.world
-6. The timer only stops when your map is finalized.
+5. No sheep or coke cans will be in the paths between two ARUCO markers in the marking map, similar to [demo_arena_dev_no_collision.world](demo_arena_dev_no_collision.world).
+6. The timer only stops when your map is finalized (post-processing time will be included in your run time as well, such as selecting which 3 estimations to keep for an object).
 7. You cannot get the ARUCO marker IDs from the Gazebo model's name or a pre-defined list of markers.
