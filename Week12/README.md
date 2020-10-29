@@ -17,6 +17,9 @@ Before 6pm Fri 13 Nov, you will need to submit a written report reflecting on yo
 - Parts of your implementation that can be improved, and how to improve them
 - Additional functions that can be added in the future, either inspired by other groups' demo or by the course contents, and what benefits they may bring
 
+For a video guide of the live demo process please see below:
+[![Live demo process](https://img.youtube.com/vi/N-dMKyidO4k/maxresdefault.jpg)](https://youtu.be/N-dMKyidO4k)
+
 ## Objectives
 Final demo and competition
 
