@@ -43,7 +43,7 @@ After the final demos, all teams will be ranked, first by how many targets (ARUC
   - Finding coke cans (0-5pts): each coke can found +1pt
   - Finding sheep figurines (0-10pts): each sheep figurine found +2pt
 - Estimating poses (35pts)
-  - Generate a csv file containing the (x,y) coordinates of the ARUCO markers (with correct ID of each marker), sheep figurines (ID doesn't matter), and coke cans (ID doesn't matter) in the format of the [testing arena true map](https://github.com/tianleimin/ECE4078_Lab_Dev/blob/master/Week10-11/TruePose_demo_arena_dev.csv) 
+  - Generate a csv file containing the (x,y) coordinates of the ARUCO markers (with correct ID of each marker), sheep figurines (ID doesn't matter), and coke cans (ID doesn't matter) in the format of the [testing arena true map](https://github.com/tianleimin/ECE4078_Lab/blob/master/Week10-11/TruePose_demo_arena_dev.csv) 
   - ARUCO markers' (x,y) coordinates (0-10pts): each estimated x OR y coordinate that is within 1m from the true x OR y coordinate of an ARUCO marker +0.5pt
   - Coke cans' (x,y) coordinates (0-10pts): each estimated x OR y coordinate that is within 1m from the true x OR y coordinate of a coke can +1pt
   - Sheep's (x,y) coordinates (0-15pts): each estimated x OR y coordinate that is within 1m from the true x OR y coordinate of a sheep figurine +1.5pt
