@@ -9,7 +9,7 @@ During the final demo, the task is for the robot to roam through an arena, which
 
 We will set up 30min slots for final demo. There will be two parallel sessions between 9am-12pm and 1pm-7pm on 9 Nov, each managed by two demonstrators. You can register to demo in one of these slots. If there are unsolvable issues that prevent you from performing the live demo during your assigned slot, a demonstrator will run your submitted implementation on their machine and mark your performance based on the run on their machine.
 
-Final demo will be marked based on your live demo performance and an additional written report. Different arenas with slight variations may be used at different times of the day, but for all arenas the robot will start from (0,0) and will have at least 2 ARUCO markers in sight at the start. The marking arenas will be provided to you at the start of your demo session.
+Final demo will be marked based on your live demo performance and an additional written report. A final demo arena will be provided at 9am on Mon 9 Nov, in which the robot will start from (0,0) and will have at least 2 ARUCO markers in sight at the start.
 
 Before 6pm Fri 13 Nov, you will need to submit a written report reflecting on your implementation. The report should be at most 4 pages long (minimum margin 0.5cm, minimum font 12pt). It should include:
 - A function you implemented that you are most proud of and its design process
