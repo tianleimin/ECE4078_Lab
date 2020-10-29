@@ -11,6 +11,9 @@ For Lab Session 1 (15 groups) and Lab Session 2 (14 groups) there will be two br
 
 Week 12 will be a trial run of the final demo and marking process. M5 will be marked following the same marking scheme as the final demo, except for in the final demo there is an additional written report to be submitted after the live demo. The marking arenas for each lab session and for M5 and final demo will have slight variations, but for all arenas the robot will start from (0,0) and will have at least 2 ARUCO markers in sight at the start.
 
+For a video guide of the live demo process please see below:
+[![Live demo process](https://img.youtube.com/vi/N-dMKyidO4k/maxresdefault.jpg)](https://youtu.be/N-dMKyidO4k)
+
 ## Objectives
 - Week 10&11: finish integrating your system so that it can navigate through an arena, locate all ARUCO markers, sheep figurines, and coke cans, and generate a map of this arena which gives the (x,y) coordinated of these targets.
 - Week 12: live demo for M5 marking, which also serves as a trial run of the final demo and marking process
