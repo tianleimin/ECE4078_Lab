@@ -3,6 +3,10 @@
 ## Introduction
 This is your final assessment of the course, which contributes to 60% of your total score.
 
+There are two parallel tracks for final demo on 9 Nov between 9am-12pm and 1pm-7pm, and you can attend either one of them. To book a 30min slot, please go to [Room 1](https://calendar.google.com/calendar/selfsched?sstoken=UUNYUWk5ekt0Nm9afGRlZmF1bHR8OGEwZjU3ZGI4MDk4N2Y5OTZkMjZhMTUzMWZkN2U0ZDQ) or [Room 2](https://calendar.google.com/calendar/selfsched?sstoken=UUl0N3J0WDNRelh5fGRlZmF1bHR8YmM1ODAwMTc5MjJiMGE2MDhmZTU5NWE5YjJhMzcxYmE)'s appointment page. When making an appointment, please specify your group number as shown in the example below. **Each group can only book one slot with one room. If a group has made multiple bookings all of their bookings will be cancelled and they will need to book again.**
+
+![Make an appointment for final demo](FinalDemoBooking.png?raw=true "Specify your group number when booking an appointment for final demo")
+
 Before 9am on Mon 9 Nov, you will need to submit a copy of your implementation on Moodle. At the start of your demo session you will need to download your submission and unzip it for your demo. After running the live demo you will need to submit the generated map on Moodle during your demo session. If the map hasn't been submitted by the end of your demo session your [performance mark](#Performance-marking-scheme-55pts) will be 0. Final demo will be recorded by the demonstrators.
 
 During the final demo, the task is for the robot to roam through an arena, which has a number of ARUCO markers on the walls, as well as sheep figurines and coke cans at different locations of the arena. The robot will need to generate a map of this arena, which gives the (x,y) coordinates of each of the ARUCO markers, sheep figurines, and coke cans it has found. You can either teleoperate the robot or let the robot drive autonomously. Each team has at most 5 minutes to set things up before starting the demo, and can spend at most 10 minutes (simulator world clock, roughly equal to 20min real world time) in the arena. If you are confident with the resulting map you can end the demo earlier.
