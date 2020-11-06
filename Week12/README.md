@@ -83,3 +83,4 @@ After the final demos, all teams will be ranked, first by how many targets (ARUC
 5. No sheep or coke cans will be in the paths between two ARUCO markers in the marking map, similar to [demo_arena_dev_no_collision.world](https://github.com/tianleimin/ECE4078_Lab/blob/master/Week10-11/demo_arena_dev_no_collision.world).
 6. The timer only stops when your map is finalized (post-processing time will be included in your run time as well, such as selecting which 3 estimations to keep for an object).
 7. You cannot get the ARUCO marker IDs from the Gazebo model's name or a pre-defined list of markers.
+8. Inside ```catkin_ws/src/penguinpi_gazebo/scripts/server```, you can only change the server port section for resolving the connection issue (line 399 to end), do not make any other changes to it. 
