@@ -84,3 +84,5 @@ After the final demos, all teams will be ranked, first by how many targets (ARUC
 6. The timer only stops when your map is finalized (post-processing time will be included in your run time as well, such as selecting which 3 estimations to keep for an object).
 7. You cannot get the ARUCO marker IDs from the Gazebo model's name or a pre-defined list of markers.
 8. Inside ```catkin_ws/src/penguinpi_gazebo/scripts/server```, you can only change the server port section for resolving the connection issue (line 399 to end), do not make any other changes to it. 
+9. If you have modified ```penguinpi.sdf```, make sure to include it in your submission file. You will need to download and copy-paste your customised sdf file into your catkin_ws during the live demo.
+10. Please download the final demo arena world file and launch it during your live demo.
